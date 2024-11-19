@@ -1,3 +1,7 @@
+# desenvolva um algoritmo que solicite ao usuário uma
+# quantidade de dias, de horas, de minutos e de segundos. Calcule o total de
+# segundos resultante e imprima-o na tela, para o usuário.
+
 dias = int(input('Quantos dias? '))
 horas = int(input('Quantas horas? '))
 min = int(input('Quantos min? '))

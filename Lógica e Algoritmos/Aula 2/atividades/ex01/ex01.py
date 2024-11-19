@@ -1,3 +1,6 @@
+# desenvolva um algoritmo que solicite ao usuário dois
+# números inteiros. Imprima a soma desses dois números na tela.
+
 x = int(input('Digite um número inteiro: '))
 y = int(input('Digite um segundo numero inteiro: '))
 
