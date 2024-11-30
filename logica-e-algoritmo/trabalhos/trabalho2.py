@@ -20,79 +20,68 @@
 #     J. Deve-se apresentar na saída de console um pedido em que o usuário errou o sabor [EXIGÊNCIA DE SAÍDA DE CONSOLE 2 de 4]; 
 #     K. Deve-se apresentar na saída de console um pedido em que o usuário errou o tamanho [EXIGÊNCIA DE SAÍDA DE CONSOLE 3 de 4];
 #     L. Deve-se apresentar na saída de console um pedido com duas opções sabores diferentes e com tamanhos diferentes [EXIGÊNCIA DE SAÍDA DE CONSOLE 4 de 4];  
+
+print(9 * '-','Bem-vindo a Pizzaria do Davyd Ferreira', 9 * '-')
+print(22 * '-', 'Cardápio', 26 * '-')
+print(58 * '-')
+print(3 * '-' + '|', 'Tamanho', '|', ' Pizza Salgada(PS) ', '|', ' Pizza Doce(PD) ', '|' + 3 * '-')
+print(3 * '-' + '|' + 4 * ' ' + 'P' + 4 * ' ' + '|' + 6 * ' ' + 'R$ 30.00 ' + 6 * ' ' + '|' + 5 * ' ' + 'R$ 34.00' + 5 * ' ' + '|' + 3 * '-')
+print(3 * '-' + '|' + 4 * ' ' + 'M' + 4 * ' ' + '|' + 6 * ' ' + 'R$ 45.00 ' + 6 * ' ' + '|' + 5 * ' ' + 'R$ 48.00' + 5 * ' ' + '|' + 3 * '-')
+print(3 * '-' + '|' + 4 * ' ' + 'G' + 4 * ' ' + '|' + 6 * ' ' + 'R$ 60.00 ' + 6 * ' ' + '|' + 5 * ' ' + 'R$ 66.00' + 5 * ' ' + '|' + 3 * '-')
+print(58 * '-')
+print('')
+
 contador = 0
-msgFinal = ''
 
-print('Bem-vindos a Pizzaria do Davyd de Basto Ferreira')
-while True:
-    print(3 * '-', 'Menu', 3 * '-')
-    
-    print('A loja possui os seguintes sabores:')
-    print('1 - Salgadas')
-    print('2 - Doces')
-    sabor = int(input(': '))
+while(True):
+    sabor = input('Entre com o sabor desejado (PS/PD): ').upper()
 
-    if(sabor == 1 or sabor == 2):
-        print('Qual tamanho de Pizza você desejaria?')
-        print('1 - Pequena')
-        print('2 - Média')
-        print('3 - Grande')
-        tamanho = int(input(': '))
+    if(sabor == 'PS' or sabor == 'PD'):
+        tamanho = input('Entre com o tamanho desejado (P/M/G): ').upper()
 
-        if(tamanho == 1 or tamanho == 2 or tamanho == 3):
-            if(sabor == 1 and tamanho == 1):
-                texto = '- Pizza Salgada tamanho Pequeno - R$30,00 \n'
-                print(texto)
-
+        if(tamanho == 'P' or tamanho == 'M' or tamanho == 'G'):
+            if(sabor == 'PS' and tamanho == 'P'):
+                print('Você pediu uma Pizza Salgada no tamanho P: R$ 30.00')
+                print('')
                 contador += 30
-                msgFinal += texto
-            elif(sabor == 1 and tamanho == 2):
-                texto = '- Pizza Salgada tamanho Médio - R$45,00 \n'
-                print(texto)
-
+            elif(sabor == 'PS' and tamanho == 'M'):
+                print('Você pediu uma Pizza Salgada no tamanho M: R$ 45.00')
+                print('')
                 contador += 45
-                msgFinal += texto
-            elif(sabor == 1 and tamanho == 3):
-                texto = '- Pizza Salgada tamanho Grande - R$60,00 \n'
-                print(texto)
-
+            elif(sabor == 'PS' and tamanho == 'G'):
+                print('Você pediu uma Pizza Salgada no tamanho G: R$ 60.00')
+                print('')
                 contador += 60
-                msgFinal += texto
-            elif(sabor == 2 and tamanho == 1):
-                texto = '- Pizza Doce tamanho Pequeno - R$34,00 \n'
-                print(texto)
-
+            elif(sabor == 'PD' and tamanho == 'P'):
+                print('Você pediu uma Pizza Doce no tamanho P: R$ 34.00')
+                print('')
                 contador += 34
-                msgFinal += texto
-            elif(sabor == 2 and tamanho == 2):
-                texto = '- Pizza Doce tamanho Médio - R$48,00 \n'
-                print(texto)
-
+            elif(sabor == 'PD' and tamanho == 'M'):
+                print('Você pediu uma Pizza Doce no tamanho M: R$ 48.00')
+                print('')
                 contador += 48
-                msgFinal += texto
-            elif(sabor == 2 and tamanho == 3):
-                texto = '- Pizza Doce tamanho Grande - R$66,00 \n'
-                print(texto)
-
+            elif(sabor == 'PD' and tamanho == 'G'):
+                print('Você pediu uma Pizza Doce no tamanho G: R$ 66.00')
+                print('')
                 contador += 66
-                msgFinal += texto
-        else:
-            print('Tamanho inválido. Tente novamente!! \n')
-            continue
+            else:
+                print('Sei nem como cê conseguiu chegar aqui, tem verificações antes ¯\_(ツ)_/¯')
 
-        print('Deseja pedir mais alguma coisa? (sim para continuar / não para cancelar)')
-        op = input(': ').lower()
-
-        if(op == 'sim' or op == 's'):
-            continue
-        elif(op == 'não' or op == 'nao' or op == 'n'):
-            break
+            pedir = input('Deseja mais alguma coisa? (S/N): ').upper()
+            if(pedir == 'S'):
+                continue
+            elif(pedir == 'N'):
+                break
+            else: 
+                print('Resposta inválida. Responda com S ou N')
         else:
-            break
-    else: 
-        print('Sabor inválido. Tente novamente!! \n')
+            print('Tamanho inválido. Tente novamente!!')
+            print('')
+            continue
+    else:
+        print('Sabor inválido. Tente novamente!!')
+        print('')
         continue
 
-print(f'Foi comprado:')
-print(msgFinal)
-print(f'Ficou um total de R${contador},00')
+print('')
+print(f'O valor total a ser pago: R$ {contador}.00')
